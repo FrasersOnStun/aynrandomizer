@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PandellRandomIntegerTester.Properties
+namespace AynRandomizer.Properties
 {
 
 

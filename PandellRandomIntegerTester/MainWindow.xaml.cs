@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 
-namespace PandellRandomIntegerTester
+namespace AynRandomizer
 {
     /// <summary>
     /// Generate List will create the desired list in global gIntList provided the correct min and max integers are entered

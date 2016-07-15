@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PandellRandomIntegerTester", "PandellRandomIntegerTester\PandellRandomIntegerTester.csproj", "{4DA4E87C-F56B-41BC-94B7-8CFC0B9D5E7C}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AynRandomizerTester", "PandellRandomIntegerTester\AynRandomizerTester.csproj", "{4DA4E87C-F56B-41BC-94B7-8CFC0B9D5E7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
