@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
 namespace AynRandomizer
 {
@@ -29,7 +26,7 @@ namespace AynRandomizer
          ****************************************************************************************************/
         public List<int> RandomOrderedInts(int min, int max)
         {
-            int Offset = 0;
+            int offset = 0;
             List<int> num = new List<int>();
             RNGCryptoServiceProvider r = new RNGCryptoServiceProvider();
             byte[] randomBytes = new byte[1024]; //increasing buffer size to 8192 had no effect on speed
@@ -39,12 +36,12 @@ namespace AynRandomizer
             //Knuth Fisher Yates Shuffle 
             for (int k = 0; k < (max-min); k++)
             {
-                if (randomBytes.Length<=Offset){
+                if (randomBytes.Length<=offset){
                     r.GetBytes(randomBytes);
-                    Offset = 0;
+                    offset = 0;
                 }
-                j = (int)(BitConverter.ToInt32(randomBytes,Offset)) % max;
-                Offset +=4;
+                j = (int)(BitConverter.ToInt32(randomBytes,offset)) % max;
+                offset +=4;
                 j = (j<0) ? j*-1:j;
                 l = num[k];
                 num[k] = num[j];
