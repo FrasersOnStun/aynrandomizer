@@ -6,6 +6,7 @@ namespace CryptographicRandomGenerator.Factories
     {
         public override ulong Next()
         {
+            CheckBuffer();
             var returnInt = BitConverter.ToUInt64(RdmBytes, Offset);
             IncrementOffset();
             return returnInt;

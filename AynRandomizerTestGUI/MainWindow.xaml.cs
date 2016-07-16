@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using CryptographicRandomGenerator.Helpers;
 
 namespace AynRandomizerTestGUI
 {
@@ -41,11 +42,10 @@ namespace AynRandomizerTestGUI
         {
             int min = 1;
             int max = 10000;
-            RandomOrderList r= new RandomOrderList();
             bool bValidMin = int.TryParse(txtMin.Text, out min);
             bool bValidMax = int.TryParse(txtMax.Text, out max);
             DateTime start = DateTime.Now;
-            gIntList = r.RandomOrderedInts(min, max);
+            gIntList = ListHelpers.AssignmentMethod();
             lblElapsed.Content=(DateTime.Now - start).TotalMilliseconds.ToString("###,###,##0.000");
             lblComplete.Content = " - ";
             lblCount.Content = " - ";

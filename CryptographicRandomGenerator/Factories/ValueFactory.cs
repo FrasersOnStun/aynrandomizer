@@ -15,6 +15,12 @@ namespace CryptographicRandomGenerator.Factories
         }
         protected byte[] RdmBytes { get; private set; }
         protected int Offset { get; private set; }
+        protected ValueFactory()
+        {
+            Offset = 0;
+            SizeOfT = Marshal.SizeOf(typeof(T));
+            _buffer = 256;
+        }
         protected ValueFactory(int buffer = 256)
         {
             Offset = 0;
@@ -37,6 +43,7 @@ namespace CryptographicRandomGenerator.Factories
             RNGCryptoServiceProvider r = new RNGCryptoServiceProvider();
             RdmBytes = new byte[byteNumber];
             r.GetBytes(RdmBytes);
+            Offset = 0;
         }
 
         protected void IncrementOffset()
@@ -46,7 +53,7 @@ namespace CryptographicRandomGenerator.Factories
 
         protected void CheckBuffer()
         {
-            if (Offset + _buffer - 1 > RdmBytes.Length)
+            if (RdmBytes == null || Offset + _buffer - 1 > RdmBytes.Length)
             {
                 GenertateValues(_buffer);
             }

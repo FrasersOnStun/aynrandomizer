@@ -9,11 +9,16 @@ namespace CryptographicRandomGenerator.Helpers
         /// Method Satifies Assignment by returning a shuffled list of the integers from 1 to 10 000
         /// Knuth Fisher Yates Shuffle is used, CryptographicRandomGenerator.Factories.UintFactory supplies random values
         /// </summary>
-        /// <returns>Shuffled List<int> of integers 1 to 10 000</returns>
+        /// <returns>Shuffled List int of integers 1 to 10 000</returns>
         public static List<int> AssignmentMethod()
         {
-
-            return null;
+            var returnList = new List<int>();
+            for (var i = 1; i <= 10000; i++)
+            {
+                returnList.Add(i);
+            }
+            ShuffleULong(returnList);
+            return returnList;
         }
         /// <summary>
         /// Applies Knuth Fischer Yates Shuffle to a list
@@ -25,7 +30,7 @@ namespace CryptographicRandomGenerator.Helpers
             var x = new ULongFactory();
             for (var index = 0; index < list.Count - 1; index++)
             {
-                var newIndex = (int)(x.Next()%(ulong)(index - list.Count))+index;
+                var newIndex = (int)(x.Next()%(ulong)(list.Count - index))+index;
                 var placeHolder = list[index];
                 list[index] = list[newIndex];
                 list[newIndex] = placeHolder;

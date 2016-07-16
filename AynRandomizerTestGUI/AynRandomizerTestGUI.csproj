@@ -102,6 +102,12 @@
   <ItemGroup>
     <Resource Include="img\im_so_random.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptographicRandomGenerator\CryptographicRandomGenerator.csproj">
+      <Project>{0c0f6e2b-160e-41d4-878e-4e039d2eea0b}</Project>
+      <Name>CryptographicRandomGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
