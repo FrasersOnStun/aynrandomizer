@@ -45,7 +45,7 @@ namespace AynRandomizerTestGUI
             bool bValidMin = int.TryParse(txtMin.Text, out min);
             bool bValidMax = int.TryParse(txtMax.Text, out max);
             DateTime start = DateTime.Now;
-            gIntList = ListHelpers.AssignmentMethod();
+            gIntList = ListHelpers.AssignmentMethod(min,max);
             lblElapsed.Content=(DateTime.Now - start).TotalMilliseconds.ToString("###,###,##0.000");
             lblComplete.Content = " - ";
             lblCount.Content = " - ";

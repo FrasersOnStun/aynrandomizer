@@ -10,10 +10,10 @@ namespace CryptographicRandomGenerator.Helpers
         /// Knuth Fisher Yates Shuffle is used, CryptographicRandomGenerator.Factories.UintFactory supplies random values
         /// </summary>
         /// <returns>Shuffled List int of integers 1 to 10 000</returns>
-        public static List<int> AssignmentMethod()
+        public static List<int> AssignmentMethod(int min, int max)
         {
             var returnList = new List<int>();
-            for (var i = 1; i <= 10000; i++)
+            for (var i = min; i <= max; i++)
             {
                 returnList.Add(i);
             }
