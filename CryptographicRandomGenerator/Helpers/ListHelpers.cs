@@ -46,7 +46,7 @@ namespace CryptographicRandomGenerator.Helpers
             var x = new UIntFactory();
             for (var index = 0; index < list.Count - 1; index++)
             {
-                var newIndex = (int)(x.Next() % (uint)(index - list.Count)) + index;
+                var newIndex = (int)(x.Next() % (uint)(list.Count - index)) + index;
                 var placeHolder = list[index];
                 list[index] = list[newIndex];
                 list[newIndex] = placeHolder;
